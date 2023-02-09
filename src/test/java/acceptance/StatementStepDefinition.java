@@ -14,6 +14,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -25,10 +26,16 @@ import static org.hamcrest.Matchers.equalTo;
 public class StatementStepDefinition {
 
     private Account account;
-    private final BankAccountRepository accountRepository = new BankAccountRepositoryImpl();
-    private final TransactionRepository transactionRepository = new TransactionRepositoryImpl();
+    private final BankAccountRepository accountRepository;// = new BankAccountRepositoryImpl();
+    private final TransactionRepository transactionRepository;// = new TransactionRepositoryImpl();
     private List<AccountStatement> deposits;
     private List<AccountStatement> withdrawals;
+
+    @Autowired
+    public StatementStepDefinition(BankAccountRepository accountRepository, TransactionRepository transactionRepository) {
+        this.accountRepository = accountRepository;
+        this.transactionRepository = transactionRepository;
+    }
 
     @Given("I am a client with id {string} and account number {string} and no money")
     public void iAmAClientWithIdAndAccountNumberAndNoMoney(String clientId, String accountId) {

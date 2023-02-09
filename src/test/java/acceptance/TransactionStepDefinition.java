@@ -1,7 +1,6 @@
 package acceptance;
 
-import com.griesba.bank.adapter.BankAccountRepositoryImpl;
-import com.griesba.bank.adapter.TransactionRepositoryImpl;
+
 import com.griesba.bank.domain.entities.Account;
 import com.griesba.bank.domain.entities.Operations;
 import com.griesba.bank.domain.entities.Transaction;
@@ -15,13 +14,18 @@ import io.cucumber.java.en.When;
 import java.math.BigDecimal;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.equalTo;
 
 public class TransactionStepDefinition {
 
     private Account account;
-    private final BankAccountRepository accountRepository = new BankAccountRepositoryImpl();
-    private final TransactionRepository transactionRepository = new TransactionRepositoryImpl();
+    private final BankAccountRepository accountRepository;
+    private final TransactionRepository transactionRepository;
+
+    public TransactionStepDefinition(BankAccountRepository accountRepository, TransactionRepository transactionRepository) {
+        this.accountRepository = accountRepository;
+        this.transactionRepository = transactionRepository;
+    }
 
     @Given("I am a client with id {string} and my account number is {string} with initial balance of {string} euro")
     public void iAmAClientWithIdAndMyAccountNumberIsWithInitialBalanceOfEuro(String clientId, String accountId, String balance) {
