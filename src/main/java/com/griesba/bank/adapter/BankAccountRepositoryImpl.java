@@ -1,6 +1,6 @@
 package com.griesba.bank.adapter;
 
-import com.griesba.bank.domain.Account;
+import com.griesba.bank.domain.entities.Account;
 import com.griesba.bank.domain.repository.BankAccountRepository;
 
 import java.util.LinkedHashSet;

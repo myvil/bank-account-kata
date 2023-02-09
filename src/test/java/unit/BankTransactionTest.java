@@ -2,9 +2,9 @@ package unit;
 
 import com.griesba.bank.adapter.TransactionRepositoryImpl;
 import com.griesba.bank.adapter.BankAccountRepositoryImpl;
-import com.griesba.bank.domain.Account;
-import com.griesba.bank.domain.Operations;
-import com.griesba.bank.domain.Transaction;
+import com.griesba.bank.domain.entities.Account;
+import com.griesba.bank.domain.entities.Operations;
+import com.griesba.bank.domain.entities.Transaction;
 import com.griesba.bank.domain.repository.TransactionRepository;
 import com.griesba.bank.domain.repository.BankAccountRepository;
 import com.griesba.bank.usecases.BankTransaction;

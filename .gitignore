@@ -12,6 +12,7 @@ backup_example/
 .settings
 .springBeans
 .sts4-cache
+.gitignore
 
 
 # Created by https://www.gitignore.io/api/git,java,maven,eclipse,windows

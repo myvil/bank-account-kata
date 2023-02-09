@@ -1,6 +1,6 @@
 package com.griesba.bank.domain.repository;
 
-import com.griesba.bank.domain.Account;
+import com.griesba.bank.domain.entities.Account;
 
 import java.util.Optional;
 import java.util.Set;

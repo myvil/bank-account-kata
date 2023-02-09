@@ -1,8 +1,8 @@
 package com.griesba.bank.usecases;
 
-import com.griesba.bank.domain.Account;
-import com.griesba.bank.domain.AccountStatement;
-import com.griesba.bank.domain.Transaction;
+import com.griesba.bank.domain.entities.Account;
+import com.griesba.bank.domain.entities.AccountStatement;
+import com.griesba.bank.domain.entities.Transaction;
 import com.griesba.bank.domain.repository.TransactionRepository;
 import com.griesba.bank.domain.repository.BankAccountRepository;
 
