@@ -8,8 +8,8 @@ Feature: Bank account experience
     Then the transaction is done and the final balance is "<final_balance>"
     Examples:
       | client_id | account_id | amount  | initial_balance | final_balance |
-      | abcd      | 1234       | 1000.00 | 0.00            | 1000.00       |
-      | abcd      | 1234       | 3000.00 | 1000.00         | 4000.00       |
+      | abcd      | 1231       | 1000.00 | 0.00            | 1000.00       |
+      | abcd      | 1232       | 3000.00 | 1000.00         | 4000.00       |
 
   Scenario Outline: Bank account withdrawal
     Given I am a client with id "<client_id>" and my account number is "<account_id>" with initial balance of "<initial_balance>" euro
@@ -17,7 +17,7 @@ Feature: Bank account experience
     Then the transaction is done and the final balance is "<final_balance>"
     Examples:
       | client_id | account_id | amount  | initial_balance | final_balance |
-      | abcd      | 1234       | 1000.00 | 3000.000        | 2000.00       |
+      | abcd      | 1233       | 1000.00 | 3000.000        | 2000.00       |
       | abcd      | 1234       | 2000.00 | 2000.00         | 0.00          |
 
   Scenario: I want to see history
